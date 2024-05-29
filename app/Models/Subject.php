@@ -11,6 +11,7 @@ class Subject extends Model
     use HasFactory;
 
     public $table = 'subjects';
+    public $timestamps = false;
     protected $fillable = ['name' , 'description' , 'credits'];
 
     public function courses (): BelongsToMany

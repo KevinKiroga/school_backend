@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('course_subject', function (Blueprint $table) {
             $table-> id ();
 
-            $table-> unsignedInteger ('course_id');
-            $table-> unsignedInteger ('subject_id');
+            $table-> unsignedBigInteger ('course_id');
+            $table-> unsignedBigInteger ('subject_id');
 
-            $table->foreign ('course_id')-> references ('id')-> on ('courses')-> onDelete ('cascade');
+            $table-> foreign ('course_id')-> references('id')-> on('courses')-> onDelete('cascade');
             $table->foreign ('subject_id')-> references ('id')-> on ('subjects')-> onDelete ('cascade'); 
 
             $table->timestamps();
